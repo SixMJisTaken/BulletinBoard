@@ -1,0 +1,38 @@
+* {
+  background-color: #FAFAFA;
+  color: #5DE866;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+
+a {
+  cursor: pointer;
+  font-size: 22px;
+  padding: 10px;
+  text-decoration: none;
+  color: #5DE866;
+}
+
+/* === header === */
+.h-left , .h-right {
+  margin-top: 20px;
+}
+
+.dropdown-box {
+  display: inline-block;
+  margin-left: 25px;
+}
+/* === header_end === */
+
+.center-adjust {
+  width:95%;
+  margin:auto;
+}
+
+/* === footer === */
+.f-left , .f-right {
+  margin-top: 20px;
+}
+/* === footer_end === */
