@@ -7,10 +7,52 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "bootstrap", "data-turbo-track": "reload" %> 
+    <%= stylesheet_link_tag "bootstrap.min", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="center-adjust">
+      <header id="header">
+        <div class="row justify-content-between">
+          <div class="col-4 h-left">
+            <a herf="#">BulletinBoard</a>
+            <a herf="#">Users</a>
+            <a herf="#">Posts</a>
+          </div>
+          <div class="col-4 h-right">
+            <a herf="#">Create User</a>
+            <div class="dropdown dropdown-box">
+              <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="p-2" href="#">Profile</a></li>
+                <li><a class="p-2" href="#">Log Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <%= yield %>
+
+      <footer id="footer">
+        <div class="container-fluid">
+          <div class="row justify-content-between">
+            <div class="col-4 f-left">
+              <h2>Seattle consulting Myanmar</h2>
+            </div>
+            <div class="col-6 f-right">
+              <h4>Copyright &#169; Seattle Consulting Myanmar Co., Ltd. All rights reserved.</h4>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <%# <%= javascript_include_tag 'bootstrap.bundle' %> %>
+    <%# <%= javascript_include_tag 'bootstrap.bundle.min' %> %>
   </body>
 </html>
