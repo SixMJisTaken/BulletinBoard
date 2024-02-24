@@ -1,0 +1,18 @@
+<div class="container ">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <h1>Edit Post</h1>
+      <%= form_with do |form|%>
+        <%= form.label :title , "Title :"%>
+        <%= form.text_field :title %><br/><br/>
+        <%= form.label :description , "Description :"%>
+        <%= form.text_area :description %><br/>
+        <div class="toggle-switch">
+          <%= form.check_box :status , class: "toggle-input"%>
+          <%= form.label :status , " " , class: "toggle-label"%>
+        </div>
+        <%= form.submit "Edit"%>
+      <% end %>
+    </div>
+  </div>
+</div>

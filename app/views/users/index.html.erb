@@ -1,1 +1,46 @@
-<h1>This is User Stupid</h1>
+<div class="container ii">
+  <div class="row justify-content-center">
+    <div class="col-10 gg">
+      <form>
+        <label for="keyword">Keyword:</label>
+        <input type="text" id="keyword" name="keyword">
+        <input type="submit" value="Submit" class="btn">
+      </form>
+    </div>
+    <div class="col-10 hh">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Created User</th>
+            <th scope="col">Type</th> 
+            <th scope="col">Phone</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Address</th>
+            <th scope="col">Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto@gmail.com</td>
+            <td>By_ME</td>
+            <td>Male</td>
+            <td>09-343434</td>
+            <td>3-6-1999</td>
+            <td>kan daw lay</td>
+            <td>
+              <%= link_to "Edit" , class: "btn btn-secondary" %>
+              <%= button_tag "Detail", type: "Button", class: "btn btn-success d2p-s"%>
+              <%= button_tag "Delete", type: "button" , class: "btn btn-danger dp-s"%>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
