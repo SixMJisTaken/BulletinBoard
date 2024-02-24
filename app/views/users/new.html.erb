@@ -1,0 +1,22 @@
+<div class="container ">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <h1>Create Users</h1>
+      <%= form_with do |form|%>
+        <%= form.label :name , "Name :"%>
+        <%= form.text_field :name %><br/><br/>
+        <%= form.label :email , "Email :"%>
+        <%= form.email_field :email %><br/><br/>
+        <%= form.label :password , "Password :"%>
+        <%= form.text_field :password %><br/><br/>
+        <%= form.label :confirm_password , "Confirm Password :"%>
+        <%= form.text_field :confirm_password %><br/><br/>
+        <%= form.label :phone , "Phone :"%>
+        <%= form.telephone_field :phone %><br/><br/>
+        <%= form.label :avatar , "Profile :"%>
+        <%= form.file_field :avatar %><br/><br/>
+        <%= form.submit "Submit"%>
+      <% end %>
+    </div>
+  </div>
+</div>
