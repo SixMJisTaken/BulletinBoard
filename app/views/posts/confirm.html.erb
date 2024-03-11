@@ -1,0 +1,14 @@
+<div class="container ">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <h1>Confirm Post</h1>
+      <%= form_with model: @post , url: posts_path , method: :post do |form|%>
+        <%= form.label :title , "Title :"%>
+        <%= form.text_field :title  %><br/><br/>
+        <%= form.label :description , "Description :"%>
+        <%= form.text_area :description  %><br/>
+        <%= form.submit "Submit"%>
+      <% end %>
+    </div>
+  </div>
+</div>

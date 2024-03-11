@@ -6,9 +6,9 @@
         <input type="text" id="keyword" name="keyword">
         <input type="submit" value="Submit" class="btn">
       </form>
-      <%= link_to "Download",class: "btn"%>  
+      <%= link_to "Download", class: "btn"%>  
       <%= link_to "Upload" , class: "btn"%>
-      <%= link_to "Create" , class: "btn"%>
+      <%= link_to "Create" , new_post_path , class: "btn"%>
     </div>
     <div class="col-10 hh">
       <table class="table">
@@ -22,18 +22,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>
-              <%= link_to "Edit" , class: "btn btn-secondary" %>
-              <%= button_tag "Detail", type: "Button", class: "btn btn-success d2p-s"%>
-              <%= button_tag "Delete", type: "button" , class: "btn btn-danger dp-s"%>
-            </td>
-          </tr>
-
+          <% @posts.each do |post| %>
+            <tr>
+              <th scope="row"><%= post.title %></th>
+              <td><%= post.description %></td>
+              <td>Admin</td>
+              <td><%= post.created_at %></td>
+              <td>
+                <%= link_to "Edit" , edit_post_path(post.id) , class: "btn btn-secondary" %>
+                <%= link_to "Delete" , post_path(post.id) ,data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } , class: "btn btn-secondary" %>
+              </td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

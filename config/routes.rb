@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :users
   resources :posts do
     collection do
+      post '/confirm' , to: 'posts#edit_confirm'
+      get '/confirm' , to: 'posts#confirm'
       get '/csv', to: 'posts#csv' 
     end
   end
