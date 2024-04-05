@@ -18,11 +18,11 @@
         <div class="row justify-content-between">
           <div class="col-4 h-left">
             <a herf="#">BulletinBoard</a>
-            <a herf="#">Users</a>
+            <%= link_to "Users" , users_path %>
             <%= link_to "Posts" , posts_path %>
           </div>
           <div class="col-4 h-right">
-            <a herf="#">Create User</a>
+            <%= link_to "Create User" , new_user_path %>
             <div class="dropdown dropdown-box">
               <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown button

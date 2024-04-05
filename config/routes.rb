@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "users#index"
 
-  resources :users
+  resources :users do
+    collection do
+      post '/confirm' , to: 'users#edit_confirm'
+      get '/confirm' , to: 'users#confirm'
+    end
+  end
   resources :posts do
     collection do
       post '/confirm' , to: 'posts#edit_confirm'
@@ -17,4 +22,6 @@ Rails.application.routes.draw do
       get '/csv', to: 'posts#csv' 
     end
   end
+
+  devise_for :users
 end
