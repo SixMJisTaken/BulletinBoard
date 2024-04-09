@@ -26,7 +26,7 @@
             <tr>
               <th scope="row"><%= post.title %></th>
               <td><%= post.description %></td>
-              <td>Admin</td>
+              <td><%= post.user.username == nil ? "None" : post.user.username %></td>
               <td><%= post.created_at %></td>
               <td>
                 <%= link_to "Edit" , edit_post_path(post.id) , class: "btn btn-secondary" %>
