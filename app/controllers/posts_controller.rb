@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+
   end
 
   def new
+    @user = current_user
     @post = Post.new
   end
 
@@ -11,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.valid?
       puts "success"
-      redirect_to confirm_posts_path(post: {title: @post.title , description: @post.description })
+      redirect_to confirm_posts_path(post: {title: @post.title , description: @post.description , user_id: @post.user_id })
     else 
       puts "failed"
       render :new, status: :unprocessable_entity
@@ -60,6 +62,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title , :description)
+      params.require(:post).permit(:title , :description , :user_id)
     end
 end
